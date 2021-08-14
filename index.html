@@ -1,5 +1,6 @@
 <!Doctype HTML>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Birthday Countdown</title>
@@ -8,20 +9,26 @@
   <script type="text/javascript" src="./node_modules/moment/moment.js"></script>
   <script type="text/javascript" src="./node_modules/moment-precise-range-plugin/moment-precise-range.js"></script>
 </head>
+
 <body>
   <div class="countdown"></div>
   <script type="text/javascript">
     window.birthday = prompt('What is your birthday? MM/DD/YYYY')
     // invoke displayAge once
+    //window.
     displayAge()
     // invoke displayAge on an interval once a second
     setInterval(displayAge, 1000)
-    function displayAge(){
-      /* 
+    function displayAge() {
+
+      /*
       Use moment() to create a new moment object from the present time
       Fix this function to display someone's exact age
+      moment(window.birthday).fromNow(); 24 years
+      moment().format(window.birthday); 01/19/1998
       */
-      document.querySelector('.countdown').innerHTML = moment()
+
+      document.querySelector('.countdown').innerHTML = moment(window.birthday).fromNow('hh')
     }
   </script>
 </body>
